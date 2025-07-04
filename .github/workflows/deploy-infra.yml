@@ -1,0 +1,32 @@
+
+name: Deploy Infraestructura en Azure
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy-infra:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout código fuente
+        uses: actions/checkout@v3
+
+      - name: Iniciar sesión en Azure
+        uses: azure/login@v1
+        with:
+          creds: >
+            {{
+              "clientId": "${{ secrets.AZURE_CLIENT_ID }}",
+              "clientSecret": "${{ secrets.AZURE_CLIENT_SECRET }}",
+              "tenantId": "${{ secrets.AZURE_TENANT_ID }}",
+              "subscriptionId": "${{ secrets.AZURE_SUBSCRIPTION_ID }}"
+            }}
+
+      - name: Ejecutar despliegue de infraestructura
+        shell: pwsh
+        run: ./deploy-azure.ps1
+        env:
+          SQL_ADMIN_PASSWORD: ${{ secrets.SQL_ADMIN_PASSWORD }}
