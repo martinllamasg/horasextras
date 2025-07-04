@@ -1,0 +1,110 @@
+
+@model HorasExtrasAppClean.Models.OvertimeEntryModel
+@{
+    ViewData["Title"] = "Captura de Horas Extras";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card shadow-sm mb-4">
+    <div class="card-header bg-primary text-white d-flex align-items-center justify-content-between">
+        <div class="d-flex align-items-center">
+            <i class="bi bi-clock-fill me-2"></i>
+            <strong>Captura de Horas Extras</strong>
+        </div>
+        <span class="fw-semibold text-end">
+            <i class="bi bi-calendar-event"></i> Semana: <span id="displayWeekDate">[sin seleccionar]</span>
+        </span>
+    </div>
+    <div class="card-body">
+        <form asp-action="Create" method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label class="form-label fw-semibold"><i class="bi bi-calendar2-week"></i> Fecha de la semana</label>
+                <input type="date" asp-for="WeekDate" class="form-control" required onchange="updateDisplayDate()" id="inputWeekDate" />
+            </div>
+
+            <div id="rows-container">
+                <div class="overtime-row border rounded p-3 mb-3 bg-light" data-index="0">
+                    <div class="mb-2">
+                        <label class="form-label fw-semibold">Fila 1: Días trabajados y horas</label>
+                    </div>
+                    <div class="row">
+                        @foreach (var day in new[] { "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo" })
+                        {
+                            <div class="col-md-3 mb-2 d-flex align-items-center">
+                                <input type="checkbox" class="form-check-input me-2" name="Rows[0].SelectedDays" value="@day" id="chk_0_@day" />
+                                <label class="form-check-label me-2" for="chk_0_@day">@day</label>
+                                <input type="number" class="form-control form-control-sm" name="Rows[0].Hours[@day]" min="0" max="10" step="0.5" placeholder="Hrs" style="width: 70px;" />
+                            </div>
+                        }
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold"><i class="bi bi-journal-text"></i> Descripción de actividades</label>
+                        <textarea class="form-control" rows="2" name="Rows[0].Description" required></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold"><i class="bi bi-paperclip"></i> Evidencia (PDF o JPG)</label>
+                        <input type="file" class="form-control" name="Rows[0].FileUpload" accept=".pdf,.jpg,.jpeg" required />
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-3 text-end">
+                <button type="button" class="btn btn-outline-primary btn-sm" onclick="addRow()">
+                    <i class="bi bi-plus-circle"></i> Agregar fila (máximo 7)
+                </button>
+            </div>
+
+            <div class="d-flex justify-content-between">
+                <button type="submit" class="btn btn-primary">
+                    <i class="bi bi-save-fill"></i> Guardar
+                </button>
+                <a asp-action="MisRegistros" class="btn btn-outline-secondary">
+                    <i class="bi bi-clock-history"></i> Ver mis registros
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        function updateDisplayDate() {
+            const dateInput = document.getElementById("inputWeekDate");
+            const display = document.getElementById("displayWeekDate");
+            if (dateInput && dateInput.value) {
+                const date = new Date(dateInput.value);
+                const options = { year: 'numeric', month: 'long', day: 'numeric' };
+                display.innerText = date.toLocaleDateString('es-MX', options);
+            } else {
+                display.innerText = "[sin seleccionar]";
+            }
+        }
+        updateDisplayDate();
+
+        let rowIndex = 1;
+        function addRow() {
+            if (rowIndex >= 7) return alert("Solo puedes agregar hasta 7 filas.");
+
+            const container = document.getElementById("rows-container");
+            const original = document.querySelector(".overtime-row");
+            const clone = original.cloneNode(true);
+            clone.dataset.index = rowIndex;
+
+            // Actualizar los nombres e IDs de los inputs/clases
+            clone.querySelectorAll("input, textarea, label").forEach(el => {
+                if (el.name) el.name = el.name.replace(/Rows\[\d+\]/, `Rows[${rowIndex}]`);
+                if (el.id) el.id = el.id.replace(/_\d+_/, `_${rowIndex}_`);
+                if (el.htmlFor) el.htmlFor = el.htmlFor.replace(/_\d+_/, `_${rowIndex}_`);
+                if (el.tagName === "LABEL" && el.classList.contains("form-check-label")) el.textContent = el.textContent.trim();
+                if (el.tagName === "TEXTAREA") el.value = "";
+                if (el.type === "file") el.value = "";
+                if (el.type === "checkbox" || el.type === "number") el.checked = false; el.value = "";
+            });
+
+            clone.querySelector("label.form-label").textContent = `Fila ${rowIndex + 1}: Días trabajados y horas`;
+
+            container.appendChild(clone);
+            rowIndex++;
+        }
+    </script>
+}

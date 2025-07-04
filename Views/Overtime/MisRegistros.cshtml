@@ -1,0 +1,32 @@
+
+@{
+    ViewData["Title"] = "Mis Registros";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="mb-4"><i class="bi bi-clock-history"></i> Mis Registros Recientes</h2>
+
+<div class="row">
+    @{
+        var semanas = new[] { "Semana del 01-Jul-2025", "Semana del 24-Jun-2025", "Semana del 17-Jun-2025" };
+        foreach (var semana in semanas)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm h-100">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-primary"><i class="bi bi-calendar-week"></i> @semana</h5>
+                        <p class="card-text">Horas capturadas, evidencia cargada y descripción registrada.</p>
+                        <div class="mt-auto">
+                            <a href="@Url.Action("Resumen", "Overtime")" class="btn btn-outline-primary btn-sm me-2">
+                                <i class="bi bi-search"></i> Ver Detalles
+                            </a>
+                            <a href="@Url.Action("Create", "Overtime")" class="btn btn-outline-secondary btn-sm">
+                                <i class="bi bi-pencil-square"></i> Editar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+</div>

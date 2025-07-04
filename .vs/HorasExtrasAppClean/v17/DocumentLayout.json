@@ -1,0 +1,138 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\mllam\\source\\repos\\HorasExtrasProyecto_Limpio_Final_OK\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|c:\\users\\mllam\\source\\repos\\horasextrasproyecto_limpio_final_ok\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|solutionrelative:dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|c:\\users\\mllam\\source\\repos\\horasextrasproyecto_limpio_final_ok\\horasextrasappclean.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|solutionrelative:horasextrasappclean.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|c:\\users\\mllam\\source\\repos\\horasextrasproyecto_limpio_final_ok\\horasextrasappclean.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|solutionrelative:horasextrasappclean.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|c:\\users\\mllam\\source\\repos\\horasextrasproyecto_limpio_final_ok\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|c:\\users\\mllam\\source\\repos\\horasextrasproyecto_limpio_final_ok\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|c:\\users\\mllam\\source\\repos\\horasextrasproyecto_limpio_final_ok\\views\\overtime\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|solutionrelative:views\\overtime\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|c:\\users\\mllam\\source\\repos\\horasextrasproyecto_limpio_final_ok\\data\\overtimedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|solutionrelative:data\\overtimedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "OvertimeDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\mllam\\source\\repos\\HorasExtrasProyecto_Limpio_Final_OK\\Data\\OvertimeDbContext.cs",
+              "RelativeDocumentMoniker": "Data\\OvertimeDbContext.cs",
+              "ToolTip": "C:\\Users\\mllam\\source\\repos\\HorasExtrasProyecto_Limpio_Final_OK\\Data\\OvertimeDbContext.cs",
+              "RelativeToolTip": "Data\\OvertimeDbContext.cs",
+              "ViewState": "AgIAADoAAAAAAAAAAAAAwDwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-04T15:29:34.972Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\mllam\\source\\repos\\HorasExtrasProyecto_Limpio_Final_OK\\Views\\Overtime\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\Overtime\\Create.cshtml",
+              "ToolTip": "C:\\Users\\mllam\\source\\repos\\HorasExtrasProyecto_Limpio_Final_OK\\Views\\Overtime\\Create.cshtml",
+              "RelativeToolTip": "Views\\Overtime\\Create.cshtml",
+              "ViewState": "AgIAADAAAAAAAAAAAAAAAG4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-04T15:14:00.566Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\mllam\\source\\repos\\HorasExtrasProyecto_Limpio_Final_OK\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\mllam\\source\\repos\\HorasExtrasProyecto_Limpio_Final_OK\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-07-03T23:27:04.186Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\mllam\\source\\repos\\HorasExtrasProyecto_Limpio_Final_OK\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\mllam\\source\\repos\\HorasExtrasProyecto_Limpio_Final_OK\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAAADEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-03T23:10:44.864Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HorasExtrasAppClean",
+              "DocumentMoniker": "C:\\Users\\mllam\\source\\repos\\HorasExtrasProyecto_Limpio_Final_OK\\HorasExtrasAppClean.csproj",
+              "RelativeDocumentMoniker": "HorasExtrasAppClean.csproj",
+              "ToolTip": "C:\\Users\\mllam\\source\\repos\\HorasExtrasProyecto_Limpio_Final_OK\\HorasExtrasAppClean.csproj",
+              "RelativeToolTip": "HorasExtrasAppClean.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-07-03T22:59:43.839Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "HorasExtrasAppClean.csproj",
+              "DocumentMoniker": "C:\\Users\\mllam\\source\\repos\\HorasExtrasProyecto_Limpio_Final_OK\\HorasExtrasAppClean.csproj",
+              "RelativeDocumentMoniker": "HorasExtrasAppClean.csproj",
+              "ToolTip": "C:\\Users\\mllam\\source\\repos\\HorasExtrasProyecto_Limpio_Final_OK\\HorasExtrasAppClean.csproj",
+              "RelativeToolTip": "HorasExtrasAppClean.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-07-03T22:53:36.835Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Dockerfile",
+              "DocumentMoniker": "C:\\Users\\mllam\\source\\repos\\HorasExtrasProyecto_Limpio_Final_OK\\Dockerfile",
+              "RelativeDocumentMoniker": "Dockerfile",
+              "ToolTip": "C:\\Users\\mllam\\source\\repos\\HorasExtrasProyecto_Limpio_Final_OK\\Dockerfile",
+              "RelativeToolTip": "Dockerfile",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-07-03T22:54:06.394Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

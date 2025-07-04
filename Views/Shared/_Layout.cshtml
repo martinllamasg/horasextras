@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"] - Portal de Captura de Horas Extras</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #dee2e6;
+        }
+        .brand-title {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #333;
+        }
+        .bi-person-circle {
+            font-size: 1.25rem;
+        }
+        .card-header i {
+            margin-right: 0.5rem;
+        }
+        .btn-primary {
+            background-color: #0078d4;
+            border-color: #0078d4;
+        }
+        .btn-primary:hover {
+            background-color: #005a9e;
+            border-color: #005a9e;
+        }
+        .btn-outline-primary {
+            color: #0078d4;
+            border-color: #0078d4;
+        }
+        .btn-outline-primary:hover {
+            background-color: #e5f1fb;
+        }
+    </style>
+</head>
+<body>
+    <header class="shadow-sm py-2">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center gap-2">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" height="28" />
+                <span class="brand-title">Portal de Captura de Horas Extras</span>
+            </div>
+            <div class="d-flex align-items-center gap-2">
+                <i class="bi bi-person-circle text-primary"></i>
+                <span class="text-dark fw-semibold">@User.Identity?.Name</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="container my-4">
+        @RenderBody()
+    </main>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

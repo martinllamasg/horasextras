@@ -1,0 +1,24 @@
+
+CREATE TABLE OvertimeEntries (
+    Id INT PRIMARY KEY IDENTITY(1,1),
+    UserId NVARCHAR(100) NOT NULL,
+    WeekDate DATE NOT NULL,
+    CreatedAt DATETIME NOT NULL DEFAULT GETDATE()
+);
+
+CREATE TABLE OvertimeRows (
+    Id INT PRIMARY KEY IDENTITY(1,1),
+    OvertimeEntryId INT NOT NULL,
+    SelectedDays NVARCHAR(255) NOT NULL,
+    Description NVARCHAR(MAX) NOT NULL,
+    FilePath NVARCHAR(255),
+    FOREIGN KEY (OvertimeEntryId) REFERENCES OvertimeEntries(Id) ON DELETE CASCADE
+);
+
+CREATE TABLE OvertimeHours (
+    Id INT PRIMARY KEY IDENTITY(1,1),
+    OvertimeRowId INT NOT NULL,
+    DayName NVARCHAR(20) NOT NULL,
+    Hours FLOAT NOT NULL,
+    FOREIGN KEY (OvertimeRowId) REFERENCES OvertimeRows(Id) ON DELETE CASCADE
+);
