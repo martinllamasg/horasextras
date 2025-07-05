@@ -1,0 +1,40 @@
+
+name: Desplegar Aplicación HorasExtras
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout del repositorio
+      uses: actions/checkout@v3
+
+    - name: Configurar .NET Core
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: '8.0.x'
+
+    - name: Restaurar dependencias
+      run: dotnet restore ./src/HorasExtrasAppClean/HorasExtrasAppClean.csproj
+
+    - name: Compilar la solución
+      run: dotnet build ./src/HorasExtrasAppClean/HorasExtrasAppClean.csproj --configuration Release --no-restore
+
+    - name: Publicar el proyecto
+      run: dotnet publish ./src/HorasExtrasAppClean/HorasExtrasAppClean.csproj -c Release -o ./publish_output
+
+    - name: Iniciar sesión en Azure
+      uses: azure/login@v1
+      with:
+        creds: '${{ secrets.AZURE_CREDENTIALS }}'
+
+    - name: Desplegar a Azure Web App
+      uses: azure/webapps-deploy@v2
+      with:
+        app-name: 'app-horasextras-dev'
+        package: './publish_output'

@@ -1,0 +1,23 @@
+
+name: Validar Infraestructura Azure
+
+on:
+  workflow_dispatch:
+
+jobs:
+  validar-recursos:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout del repositorio
+      uses: actions/checkout@v3
+
+    - name: Iniciar sesión en Azure
+      uses: azure/login@v1
+      with:
+        creds: '${{ secrets.AZURE_CREDENTIALS }}'
+
+    - name: Ejecutar script de validación
+      shell: pwsh
+      run: |
+        ./validar-deploy.ps1
