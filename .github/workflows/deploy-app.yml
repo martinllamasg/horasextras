@@ -1,40 +1,41 @@
-
-name: Desplegar Aplicación HorasExtras
+name: Deploy HorasExtrasApp to Azure Web App
 
 on:
   push:
     branches:
-      - main
+      - main  # o cambia a tu rama principal si es diferente
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout del repositorio
-      uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-    - name: Configurar .NET Core
-      uses: actions/setup-dotnet@v3
-      with:
-        dotnet-version: '8.0.x'
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '8.0.x'
 
-    - name: Restaurar dependencias
-      run: dotnet restore ./src/HorasExtrasAppClean/HorasExtrasAppClean.csproj
+      - name: Login to Azure
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-    - name: Compilar la solución
-      run: dotnet build ./src/HorasExtrasAppClean/HorasExtrasAppClean.csproj --configuration Release --no-restore
+      - name: Restore dependencies
+        run: dotnet restore ./HorasExtrasAppClean.csproj
 
-    - name: Publicar el proyecto
-      run: dotnet publish ./src/HorasExtrasAppClean/HorasExtrasAppClean.csproj -c Release -o ./publish_output
+      - name: Build project
+        run: dotnet build ./HorasExtrasAppClean.csproj --configuration Release
 
-    - name: Iniciar sesión en Azure
-      uses: azure/login@v1
-      with:
-        creds: '${{ secrets.AZURE_CREDENTIALS }}'
+      - name: Publish project
+        run: dotnet publish ./HorasExtrasAppClean.csproj --configuration Release --output ./publish_output
 
-    - name: Desplegar a Azure Web App
-      uses: azure/webapps-deploy@v2
-      with:
-        app-name: 'app-horasextras-dev'
-        package: './publish_output'
+      - name: Deploy to Azure Web App
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: HorasExtrasApp     # Cambia por el nombre de tu App Service en Azure
+          slot-name: production
+          package: ./publish_output
+

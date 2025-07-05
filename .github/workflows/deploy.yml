@@ -1,5 +1,4 @@
-
-name: Deploy ASP.NET Core to Azure App Service
+name: Deploy to Azure
 
 on:
   push:
@@ -8,29 +7,21 @@ on:
 
 jobs:
   build-and-deploy:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Setup .NET
-        uses: actions/setup-dotnet@v4
+      - name: Login to Azure
+        uses: azure/login@v1
         with:
-          dotnet-version: '8.0.x'
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-      - name: Restore dependencies
-        run: dotnet restore
-
-      - name: Build
-        run: dotnet build --configuration Release --no-restore
-
-      - name: Publish
-        run: dotnet publish -c Release -o ./publish
-
+      # Aquí puedes agregar tu build y despliegue
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v2
         with:
           app-name: HorasExtrasApp
-          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-          package: ./publish
+          slot-name: production
+          package: .
