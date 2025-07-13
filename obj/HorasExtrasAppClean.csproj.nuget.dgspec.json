@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mllam\\source\\repos\\HorasExtrasProyecto_Limpio_Final_OK\\HorasExtrasAppClean.csproj": {}
+    "C:\\Users\\mllam\\Source\\Repos\\horasextrasGH\\HorasExtrasAppClean.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mllam\\source\\repos\\HorasExtrasProyecto_Limpio_Final_OK\\HorasExtrasAppClean.csproj": {
+    "C:\\Users\\mllam\\Source\\Repos\\horasextrasGH\\HorasExtrasAppClean.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mllam\\source\\repos\\HorasExtrasProyecto_Limpio_Final_OK\\HorasExtrasAppClean.csproj",
+        "projectUniqueName": "C:\\Users\\mllam\\Source\\Repos\\horasextrasGH\\HorasExtrasAppClean.csproj",
         "projectName": "HorasExtrasAppClean",
-        "projectPath": "C:\\Users\\mllam\\source\\repos\\HorasExtrasProyecto_Limpio_Final_OK\\HorasExtrasAppClean.csproj",
+        "projectPath": "C:\\Users\\mllam\\Source\\Repos\\horasextrasGH\\HorasExtrasAppClean.csproj",
         "packagesPath": "C:\\Users\\mllam\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mllam\\source\\repos\\HorasExtrasProyecto_Limpio_Final_OK\\obj\\",
+        "outputPath": "C:\\Users\\mllam\\Source\\Repos\\horasextrasGH\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -50,17 +50,25 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Azure.Extensions.AspNetCore.Configuration.Secrets": {
+              "target": "Package",
+              "version": "[1.4.0, )"
+            },
+            "Azure.Identity": {
+              "target": "Package",
+              "version": "[1.13.2, )"
+            },
             "Microsoft.AspNetCore.Authentication.OpenIdConnect": {
               "target": "Package",
               "version": "[8.0.0, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[8.0.0, )"
+              "version": "[8.0.14, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[8.0.0, )"
+              "version": "[8.0.14, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "suppressParent": "All",
@@ -78,6 +86,10 @@
             "Microsoft.Identity.Web.UI": {
               "target": "Package",
               "version": "[3.9.4, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
             }
           },
           "imports": [
@@ -99,7 +111,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

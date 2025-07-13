@@ -1,34 +1,149 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\mllam\\source\\repos\\HorasExtrasProyecto_Limpio_Final_OK\\",
+  "WorkspaceRootPath": "C:\\Users\\mllam\\source\\repos\\horasextrasGH\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|c:\\users\\mllam\\source\\repos\\horasextrasproyecto_limpio_final_ok\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|solutionrelative:dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|c:\\users\\mllam\\source\\repos\\horasextrasgh\\views\\overtime\\misregistros.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|solutionrelative:views\\overtime\\misregistros.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|c:\\users\\mllam\\source\\repos\\horasextrasproyecto_limpio_final_ok\\horasextrasappclean.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|solutionrelative:horasextrasappclean.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|c:\\users\\mllam\\source\\repos\\horasextrasproyecto_limpio_final_ok\\horasextrasappclean.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
-      "RelativeMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|solutionrelative:horasextrasappclean.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|c:\\users\\mllam\\source\\repos\\horasextrasproyecto_limpio_final_ok\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|c:\\users\\mllam\\source\\repos\\horasextrasproyecto_limpio_final_ok\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|c:\\users\\mllam\\source\\repos\\horasextrasproyecto_limpio_final_ok\\views\\overtime\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|c:\\users\\mllam\\source\\repos\\horasextrasgh\\views\\overtime\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|solutionrelative:views\\overtime\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|c:\\users\\mllam\\source\\repos\\horasextrasproyecto_limpio_final_ok\\data\\overtimedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|c:\\users\\mllam\\source\\repos\\horasextrasgh\\controllers\\overtimecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|solutionrelative:controllers\\overtimecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|c:\\users\\mllam\\source\\repos\\horasextrasgh\\wwwroot\\css\\misregistros.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|solutionrelative:wwwroot\\css\\misregistros.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|c:\\users\\mllam\\source\\repos\\horasextrasgh\\models\\overtimerecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|solutionrelative:models\\overtimerecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|c:\\users\\mllam\\source\\repos\\horasextrasgh\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|c:\\users\\mllam\\source\\repos\\horasextrasgh\\data\\overtimedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|solutionrelative:data\\overtimedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|c:\\users\\mllam\\source\\repos\\horasextrasgh\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|solutionrelative:data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|c:\\users\\mllam\\source\\repos\\horasextrasgh\\models\\overtimerow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|solutionrelative:models\\overtimerow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|c:\\users\\mllam\\source\\repos\\horasextrasgh\\views\\overtime\\paneljefe.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|solutionrelative:views\\overtime\\paneljefe.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|c:\\users\\mllam\\source\\repos\\horasextrasgh\\views\\overtime\\autorizar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|solutionrelative:views\\overtime\\autorizar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|c:\\users\\mllam\\source\\repos\\horasextrasgh\\models\\overtimeentrymodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|solutionrelative:models\\overtimeentrymodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|c:\\users\\mllam\\source\\repos\\horasextrasgh\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|c:\\users\\mllam\\source\\repos\\horasextrasgh\\horasextrasappclean.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|solutionrelative:horasextrasappclean.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|c:\\users\\mllam\\source\\repos\\horasextrasgh\\views\\overtime\\resumen.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|solutionrelative:views\\overtime\\resumen.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mllam\\source\\repos\\HorasExtrasProyecto_Limpio_Final_OK\\Views\\Overtime\\Create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|c:\\users\\mllam\\source\\repos\\horasextrasgh\\views\\overtime\\createfirstpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|solutionrelative:views\\overtime\\createfirstpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|c:\\users\\mllam\\source\\repos\\horasextrasgh\\views\\overtime\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|solutionrelative:views\\overtime\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|c:\\users\\mllam\\source\\repos\\horasextrasgh\\views\\overtime\\createpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|solutionrelative:views\\overtime\\createpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|c:\\users\\mllam\\source\\repos\\horasextrasgh\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|solutionrelative:dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|c:\\users\\mllam\\source\\repos\\horasextrasgh\\models\\empleado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|solutionrelative:models\\empleado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|c:\\users\\mllam\\source\\repos\\horasextrasgh\\migrations\\20240708_addweeknumbertoovertimerecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|solutionrelative:migrations\\20240708_addweeknumbertoovertimerecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|c:\\users\\mllam\\source\\repos\\horasextrasgh\\services\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|solutionrelative:services\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|c:\\users\\mllam\\source\\repos\\horasextrasgh\\deploy-azure.ps1||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|solutionrelative:deploy-azure.ps1||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|c:\\users\\mllam\\source\\repos\\horasextrasgh\\main-private-endpoint.bicep||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|solutionrelative:main-private-endpoint.bicep||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|c:\\users\\mllam\\source\\repos\\horasextrasgh\\.github\\deploy.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|solutionrelative:.github\\deploy.yml||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|c:\\users\\mllam\\source\\repos\\horasextrasgh\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|solutionrelative:startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|c:\\users\\mllam\\source\\repos\\horasextrasgh\\script_capturahorasextras.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}",
+      "RelativeMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|solutionrelative:script_capturahorasextras.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|c:\\users\\mllam\\source\\repos\\horasextrasgh\\main.bicep||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|solutionrelative:main.bicep||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|c:\\users\\mllam\\source\\repos\\horasextrasgh\\create_overtimerecords_table.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}",
+      "RelativeMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|solutionrelative:create_overtimerecords_table.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|c:\\users\\mllam\\source\\repos\\horasextrasgh\\database\\schema_horasextras.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}",
+      "RelativeMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|solutionrelative:database\\schema_horasextras.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|c:\\users\\mllam\\source\\repos\\horasextrasgh\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|solutionrelative:appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|c:\\users\\mllam\\source\\repos\\horasextrasgh\\appsettings.sqlserver.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|solutionrelative:appsettings.sqlserver.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|c:\\users\\mllam\\source\\repos\\horasextrasgh\\horasextrasappclean.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|solutionrelative:horasextrasappclean.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|c:\\users\\mllam\\source\\repos\\horasextrasgh\\migrations\\20250708020840_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|solutionrelative:migrations\\20250708020840_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|c:\\users\\mllam\\source\\repos\\horasextrasgh\\migrations\\overtimedb\\20250710233742_initovertime.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFD75B96-2662-4ACA-3FD5-57803163843C}|HorasExtrasAppClean.csproj|solutionrelative:migrations\\overtimedb\\20250710233742_initovertime.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,97 +153,436 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "OvertimeDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\mllam\\source\\repos\\HorasExtrasProyecto_Limpio_Final_OK\\Data\\OvertimeDbContext.cs",
-              "RelativeDocumentMoniker": "Data\\OvertimeDbContext.cs",
-              "ToolTip": "C:\\Users\\mllam\\source\\repos\\HorasExtrasProyecto_Limpio_Final_OK\\Data\\OvertimeDbContext.cs",
-              "RelativeToolTip": "Data\\OvertimeDbContext.cs",
-              "ViewState": "AgIAADoAAAAAAAAAAAAAwDwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-04T15:29:34.972Z",
-              "EditorCaption": ""
+              "DocumentIndex": 3,
+              "Title": "misregistros.css",
+              "DocumentMoniker": "C:\\Users\\mllam\\source\\repos\\horasextrasGH\\wwwroot\\css\\misregistros.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\misregistros.css",
+              "ToolTip": "C:\\Users\\mllam\\source\\repos\\horasextrasGH\\wwwroot\\css\\misregistros.css",
+              "RelativeToolTip": "wwwroot\\css\\misregistros.css",
+              "ViewState": "AgIAAHwAAAAAAAAAAAAqwJUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-07-11T19:23:01.065Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 35,
+              "Title": "20250710233742_InitOvertime.cs",
+              "DocumentMoniker": "C:\\Users\\mllam\\source\\repos\\horasextrasGH\\Migrations\\OvertimeDb\\20250710233742_InitOvertime.cs",
+              "RelativeDocumentMoniker": "Migrations\\OvertimeDb\\20250710233742_InitOvertime.cs",
+              "ToolTip": "C:\\Users\\mllam\\source\\repos\\horasextrasGH\\Migrations\\OvertimeDb\\20250710233742_InitOvertime.cs",
+              "RelativeToolTip": "Migrations\\OvertimeDb\\20250710233742_InitOvertime.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-10T23:37:42.451Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "OvertimeRow.cs",
+              "DocumentMoniker": "C:\\Users\\mllam\\source\\repos\\horasextrasGH\\Models\\OvertimeRow.cs",
+              "RelativeDocumentMoniker": "Models\\OvertimeRow.cs",
+              "ToolTip": "C:\\Users\\mllam\\source\\repos\\horasextrasGH\\Models\\OvertimeRow.cs",
+              "RelativeToolTip": "Models\\OvertimeRow.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-10T22:29:28.855Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\Users\\mllam\\source\\repos\\HorasExtrasProyecto_Limpio_Final_OK\\Views\\Overtime\\Create.cshtml",
-              "RelativeDocumentMoniker": "Views\\Overtime\\Create.cshtml",
+              "RelativeDocumentMoniker": "..\\HorasExtrasProyecto_Limpio_Final_OK\\Views\\Overtime\\Create.cshtml",
               "ToolTip": "C:\\Users\\mllam\\source\\repos\\HorasExtrasProyecto_Limpio_Final_OK\\Views\\Overtime\\Create.cshtml",
-              "RelativeToolTip": "Views\\Overtime\\Create.cshtml",
-              "ViewState": "AgIAADAAAAAAAAAAAAAAAG4AAAAAAAAAAAAAAA==",
+              "RelativeToolTip": "..\\HorasExtrasProyecto_Limpio_Final_OK\\Views\\Overtime\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-04T15:14:00.566Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-10T22:20:49.776Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\mllam\\source\\repos\\HorasExtrasProyecto_Limpio_Final_OK\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "C:\\Users\\mllam\\source\\repos\\HorasExtrasProyecto_Limpio_Final_OK\\appsettings.json",
-              "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAA1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-07-03T23:27:04.186Z",
-              "EditorCaption": ""
+              "DocumentIndex": 16,
+              "Title": "CreateFirstPartial.cshtml",
+              "DocumentMoniker": "C:\\Users\\mllam\\source\\repos\\horasextrasGH\\Views\\Overtime\\CreateFirstPartial.cshtml",
+              "RelativeDocumentMoniker": "Views\\Overtime\\CreateFirstPartial.cshtml",
+              "ToolTip": "C:\\Users\\mllam\\source\\repos\\horasextrasGH\\Views\\Overtime\\CreateFirstPartial.cshtml",
+              "RelativeToolTip": "Views\\Overtime\\CreateFirstPartial.cshtml",
+              "ViewState": "AgIAAEMAAAAAAAAAAAAIwFoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-10T17:50:23.918Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\mllam\\source\\repos\\HorasExtrasProyecto_Limpio_Final_OK\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\mllam\\source\\repos\\HorasExtrasProyecto_Limpio_Final_OK\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAAADEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-03T23:10:44.864Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "HorasExtrasAppClean",
-              "DocumentMoniker": "C:\\Users\\mllam\\source\\repos\\HorasExtrasProyecto_Limpio_Final_OK\\HorasExtrasAppClean.csproj",
-              "RelativeDocumentMoniker": "HorasExtrasAppClean.csproj",
-              "ToolTip": "C:\\Users\\mllam\\source\\repos\\HorasExtrasProyecto_Limpio_Final_OK\\HorasExtrasAppClean.csproj",
-              "RelativeToolTip": "HorasExtrasAppClean.csproj",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-07-03T22:59:43.839Z",
-              "EditorCaption": ""
+              "DocumentIndex": 18,
+              "Title": "CreatePartial.cshtml",
+              "DocumentMoniker": "C:\\Users\\mllam\\source\\repos\\horasextrasGH\\Views\\Overtime\\CreatePartial.cshtml",
+              "RelativeDocumentMoniker": "Views\\Overtime\\CreatePartial.cshtml",
+              "ToolTip": "C:\\Users\\mllam\\source\\repos\\horasextrasGH\\Views\\Overtime\\CreatePartial.cshtml",
+              "RelativeToolTip": "Views\\Overtime\\CreatePartial.cshtml",
+              "ViewState": "AgIAADQAAAAAAAAAAADwv0cAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-10T16:50:55.368Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "HorasExtrasAppClean.csproj",
-              "DocumentMoniker": "C:\\Users\\mllam\\source\\repos\\HorasExtrasProyecto_Limpio_Final_OK\\HorasExtrasAppClean.csproj",
-              "RelativeDocumentMoniker": "HorasExtrasAppClean.csproj",
-              "ToolTip": "C:\\Users\\mllam\\source\\repos\\HorasExtrasProyecto_Limpio_Final_OK\\HorasExtrasAppClean.csproj",
-              "RelativeToolTip": "HorasExtrasAppClean.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-07-03T22:53:36.835Z",
-              "EditorCaption": ""
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\mllam\\source\\repos\\horasextrasGH\\Views\\Overtime\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\Overtime\\Create.cshtml",
+              "ToolTip": "C:\\Users\\mllam\\source\\repos\\horasextrasGH\\Views\\Overtime\\Create.cshtml",
+              "RelativeToolTip": "Views\\Overtime\\Create.cshtml",
+              "ViewState": "AgIAAPQAAAAAAAAAAAAIwAsBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-10T16:50:15.129Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "20240708_AddWeekNumberToOvertimeRecord.cs",
+              "DocumentMoniker": "C:\\Users\\mllam\\source\\repos\\horasextrasGH\\Migrations\\20240708_AddWeekNumberToOvertimeRecord.cs",
+              "RelativeDocumentMoniker": "Migrations\\20240708_AddWeekNumberToOvertimeRecord.cs",
+              "ToolTip": "C:\\Users\\mllam\\source\\repos\\horasextrasGH\\Migrations\\20240708_AddWeekNumberToOvertimeRecord.cs",
+              "RelativeToolTip": "Migrations\\20240708_AddWeekNumberToOvertimeRecord.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-08T23:29:17.286Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\mllam\\source\\repos\\horasextrasGH\\Views\\Overtime\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Views\\Overtime\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\mllam\\source\\repos\\horasextrasGH\\Views\\Overtime\\Edit.cshtml",
+              "RelativeToolTip": "Views\\Overtime\\Edit.cshtml",
+              "ViewState": "AgIAADAAAAAAAAAAAADwv0cAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-08T23:13:54.484Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "MisRegistros.cshtml",
+              "DocumentMoniker": "C:\\Users\\mllam\\source\\repos\\horasextrasGH\\Views\\Overtime\\MisRegistros.cshtml",
+              "RelativeDocumentMoniker": "Views\\Overtime\\MisRegistros.cshtml",
+              "ToolTip": "C:\\Users\\mllam\\source\\repos\\horasextrasGH\\Views\\Overtime\\MisRegistros.cshtml",
+              "RelativeToolTip": "Views\\Overtime\\MisRegistros.cshtml",
+              "ViewState": "AgIAAFABAAAAAAAAAAAAAA4AAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-08T22:34:37.358Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Empleado.cs",
+              "DocumentMoniker": "C:\\Users\\mllam\\source\\repos\\horasextrasGH\\Models\\Empleado.cs",
+              "RelativeDocumentMoniker": "Models\\Empleado.cs",
+              "ToolTip": "C:\\Users\\mllam\\source\\repos\\horasextrasGH\\Models\\Empleado.cs",
+              "RelativeToolTip": "Models\\Empleado.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-08T16:16:43.192Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "EmailService.cs",
+              "DocumentMoniker": "C:\\Users\\mllam\\source\\repos\\horasextrasGH\\Services\\EmailService.cs",
+              "RelativeDocumentMoniker": "Services\\EmailService.cs",
+              "ToolTip": "C:\\Users\\mllam\\source\\repos\\horasextrasGH\\Services\\EmailService.cs",
+              "RelativeToolTip": "Services\\EmailService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-08T16:15:39.521Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "PanelJefe.cshtml",
+              "DocumentMoniker": "C:\\Users\\mllam\\source\\repos\\horasextrasGH\\Views\\Overtime\\PanelJefe.cshtml",
+              "RelativeDocumentMoniker": "Views\\Overtime\\PanelJefe.cshtml",
+              "ToolTip": "C:\\Users\\mllam\\source\\repos\\horasextrasGH\\Views\\Overtime\\PanelJefe.cshtml",
+              "RelativeToolTip": "Views\\Overtime\\PanelJefe.cshtml",
+              "ViewState": "AgIAAB0AAAAAAAAAAADwvzQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-08T16:13:55.615Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Autorizar.cshtml",
+              "DocumentMoniker": "C:\\Users\\mllam\\source\\repos\\horasextrasGH\\Views\\Overtime\\Autorizar.cshtml",
+              "RelativeDocumentMoniker": "Views\\Overtime\\Autorizar.cshtml",
+              "ToolTip": "C:\\Users\\mllam\\source\\repos\\horasextrasGH\\Views\\Overtime\\Autorizar.cshtml",
+              "RelativeToolTip": "Views\\Overtime\\Autorizar.cshtml",
+              "ViewState": "AgIAAB8AAAAAAAAAAADwvzYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-08T16:13:28.964Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "OvertimeEntryModel.cs",
+              "DocumentMoniker": "C:\\Users\\mllam\\source\\repos\\horasextrasGH\\Models\\OvertimeEntryModel.cs",
+              "RelativeDocumentMoniker": "Models\\OvertimeEntryModel.cs",
+              "ToolTip": "C:\\Users\\mllam\\source\\repos\\horasextrasGH\\Models\\OvertimeEntryModel.cs",
+              "RelativeToolTip": "Models\\OvertimeEntryModel.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAAACYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-08T02:29:28.54Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "20250708020840_InitialCreate.cs",
+              "DocumentMoniker": "C:\\Users\\mllam\\source\\repos\\horasextrasGH\\Migrations\\20250708020840_InitialCreate.cs",
+              "RelativeDocumentMoniker": "Migrations\\20250708020840_InitialCreate.cs",
+              "ToolTip": "C:\\Users\\mllam\\source\\repos\\horasextrasGH\\Migrations\\20250708020840_InitialCreate.cs",
+              "RelativeToolTip": "Migrations\\20250708020840_InitialCreate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-08T02:08:40.984Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "OvertimeRecord.cs",
+              "DocumentMoniker": "C:\\Users\\mllam\\source\\repos\\horasextrasGH\\Models\\OvertimeRecord.cs",
+              "RelativeDocumentMoniker": "Models\\OvertimeRecord.cs",
+              "ToolTip": "C:\\Users\\mllam\\source\\repos\\horasextrasGH\\Models\\OvertimeRecord.cs",
+              "RelativeToolTip": "Models\\OvertimeRecord.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-08T02:02:56.143Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "OvertimeController.cs",
+              "DocumentMoniker": "C:\\Users\\mllam\\source\\repos\\horasextrasGH\\Controllers\\OvertimeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\OvertimeController.cs",
+              "ToolTip": "C:\\Users\\mllam\\source\\repos\\horasextrasGH\\Controllers\\OvertimeController.cs",
+              "RelativeToolTip": "Controllers\\OvertimeController.cs",
+              "ViewState": "AgIAAAIBAAAAAAAAAAAIwA0BAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-08T02:00:51.137Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Resumen.cshtml",
+              "DocumentMoniker": "C:\\Users\\mllam\\source\\repos\\horasextrasGH\\Views\\Overtime\\Resumen.cshtml",
+              "RelativeDocumentMoniker": "Views\\Overtime\\Resumen.cshtml",
+              "ToolTip": "C:\\Users\\mllam\\source\\repos\\horasextrasGH\\Views\\Overtime\\Resumen.cshtml",
+              "RelativeToolTip": "Views\\Overtime\\Resumen.cshtml",
+              "ViewState": "AgIAABIAAAAAAAAAAAAIwCkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-08T01:49:21.511Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "main-private-endpoint.bicep",
+              "DocumentMoniker": "C:\\Users\\mllam\\source\\repos\\horasextrasGH\\main-private-endpoint.bicep",
+              "RelativeDocumentMoniker": "main-private-endpoint.bicep",
+              "ToolTip": "C:\\Users\\mllam\\source\\repos\\horasextrasGH\\main-private-endpoint.bicep",
+              "RelativeToolTip": "main-private-endpoint.bicep",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-07-04T23:07:16.077Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "deploy.yml",
+              "DocumentMoniker": "C:\\Users\\mllam\\source\\repos\\horasextrasGH\\.github\\deploy.yml",
+              "RelativeDocumentMoniker": ".github\\deploy.yml",
+              "ToolTip": "C:\\Users\\mllam\\source\\repos\\horasextrasGH\\.github\\deploy.yml",
+              "RelativeToolTip": ".github\\deploy.yml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
+              "WhenOpened": "2025-07-04T23:26:31.752Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Startup.cs",
+              "DocumentMoniker": "C:\\Users\\mllam\\source\\repos\\horasextrasGH\\Startup.cs",
+              "RelativeDocumentMoniker": "Startup.cs",
+              "ToolTip": "C:\\Users\\mllam\\source\\repos\\horasextrasGH\\Startup.cs",
+              "RelativeToolTip": "Startup.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-04T23:26:15.132Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "Script_CapturaHorasExtras.sql",
+              "DocumentMoniker": "C:\\Users\\mllam\\source\\repos\\horasextrasGH\\Script_CapturaHorasExtras.sql",
+              "RelativeDocumentMoniker": "Script_CapturaHorasExtras.sql",
+              "ToolTip": "C:\\Users\\mllam\\source\\repos\\horasextrasGH\\Script_CapturaHorasExtras.sql",
+              "RelativeToolTip": "Script_CapturaHorasExtras.sql",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-07-04T23:25:59.2Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "deploy-azure.ps1",
+              "DocumentMoniker": "C:\\Users\\mllam\\source\\repos\\horasextrasGH\\deploy-azure.ps1",
+              "RelativeDocumentMoniker": "deploy-azure.ps1",
+              "ToolTip": "C:\\Users\\mllam\\source\\repos\\horasextrasGH\\deploy-azure.ps1",
+              "RelativeToolTip": "deploy-azure.ps1",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-07-04T23:25:33.835Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "Create_OvertimeRecords_Table.sql",
+              "DocumentMoniker": "C:\\Users\\mllam\\source\\repos\\horasextrasGH\\Create_OvertimeRecords_Table.sql",
+              "RelativeDocumentMoniker": "Create_OvertimeRecords_Table.sql",
+              "ToolTip": "C:\\Users\\mllam\\source\\repos\\horasextrasGH\\Create_OvertimeRecords_Table.sql",
+              "RelativeToolTip": "Create_OvertimeRecords_Table.sql",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-07-04T23:25:10.602Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\mllam\\source\\repos\\horasextrasGH\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "Data\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\mllam\\source\\repos\\horasextrasGH\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "Data\\AppDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-04T23:13:05.314Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "schema_HorasExtras.sql",
+              "DocumentMoniker": "C:\\Users\\mllam\\source\\repos\\horasextrasGH\\Database\\schema_HorasExtras.sql",
+              "RelativeDocumentMoniker": "Database\\schema_HorasExtras.sql",
+              "ToolTip": "C:\\Users\\mllam\\source\\repos\\horasextrasGH\\Database\\schema_HorasExtras.sql",
+              "RelativeToolTip": "Database\\schema_HorasExtras.sql",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-07-04T23:12:52.535Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "main.bicep",
+              "DocumentMoniker": "C:\\Users\\mllam\\source\\repos\\horasextrasGH\\main.bicep",
+              "RelativeDocumentMoniker": "main.bicep",
+              "ToolTip": "C:\\Users\\mllam\\source\\repos\\horasextrasGH\\main.bicep",
+              "RelativeToolTip": "main.bicep",
+              "ViewState": "AgIAAG8AAAAAAAAAAIBJwC8AAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-07-04T23:08:29.989Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\mllam\\source\\repos\\horasextrasGH\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "appsettings.Development.json",
+              "ToolTip": "C:\\Users\\mllam\\source\\repos\\horasextrasGH\\appsettings.Development.json",
+              "RelativeToolTip": "appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-07-04T23:08:24.024Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "appsettings.sqlserver.json",
+              "DocumentMoniker": "C:\\Users\\mllam\\source\\repos\\horasextrasGH\\appsettings.sqlserver.json",
+              "RelativeDocumentMoniker": "appsettings.sqlserver.json",
+              "ToolTip": "C:\\Users\\mllam\\source\\repos\\horasextrasGH\\appsettings.sqlserver.json",
+              "RelativeToolTip": "appsettings.sqlserver.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-07-04T23:08:20.798Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "OvertimeDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\mllam\\source\\repos\\horasextrasGH\\Data\\OvertimeDbContext.cs",
+              "RelativeDocumentMoniker": "Data\\OvertimeDbContext.cs",
+              "ToolTip": "C:\\Users\\mllam\\source\\repos\\horasextrasGH\\Data\\OvertimeDbContext.cs",
+              "RelativeToolTip": "Data\\OvertimeDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-04T15:29:34.972Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\mllam\\source\\repos\\horasextrasGH\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\mllam\\source\\repos\\horasextrasGH\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAIwDAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-03T23:10:44.864Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\mllam\\source\\repos\\horasextrasGH\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\mllam\\source\\repos\\horasextrasGH\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAsAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-07-03T23:27:04.186Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "HorasExtrasAppClean",
+              "DocumentMoniker": "C:\\Users\\mllam\\Source\\Repos\\horasextrasGH\\HorasExtrasAppClean.csproj",
+              "RelativeDocumentMoniker": "HorasExtrasAppClean.csproj",
+              "ToolTip": "C:\\Users\\mllam\\Source\\Repos\\horasextrasGH\\HorasExtrasAppClean.csproj",
+              "RelativeToolTip": "HorasExtrasAppClean.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-07-03T22:59:43.839Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "HorasExtrasAppClean.csproj",
+              "DocumentMoniker": "C:\\Users\\mllam\\Source\\Repos\\horasextrasGH\\HorasExtrasAppClean.csproj",
+              "RelativeDocumentMoniker": "HorasExtrasAppClean.csproj",
+              "ToolTip": "C:\\Users\\mllam\\Source\\Repos\\horasextrasGH\\HorasExtrasAppClean.csproj",
+              "RelativeToolTip": "HorasExtrasAppClean.csproj",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA4AAABRAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-07-03T22:53:36.835Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
               "Title": "Dockerfile",
-              "DocumentMoniker": "C:\\Users\\mllam\\source\\repos\\HorasExtrasProyecto_Limpio_Final_OK\\Dockerfile",
+              "DocumentMoniker": "C:\\Users\\mllam\\source\\repos\\horasextrasGH\\Dockerfile",
               "RelativeDocumentMoniker": "Dockerfile",
-              "ToolTip": "C:\\Users\\mllam\\source\\repos\\HorasExtrasProyecto_Limpio_Final_OK\\Dockerfile",
+              "ToolTip": "C:\\Users\\mllam\\source\\repos\\horasextrasGH\\Dockerfile",
               "RelativeToolTip": "Dockerfile",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-07-03T22:54:06.394Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-03T22:54:06.394Z"
             }
           ]
         }

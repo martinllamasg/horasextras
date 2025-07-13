@@ -1,110 +1,267 @@
+﻿@model List<HorasExtrasAppClean.Models.OvertimeEntryModel>
+@using Microsoft.AspNetCore.Identity
+@using System.Security.Claims
 
-@model HorasExtrasAppClean.Models.OvertimeEntryModel
 @{
-    ViewData["Title"] = "Captura de Horas Extras";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Captura de Horas Extra";
+    int semanaActual = ViewBag.SemanaActual as int? ?? 0;
+    var nombresDias = new[] { "Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sabado" };
+    var userName = User.Identity.IsAuthenticated ? User.Identity.Name : "Invitado";
 }
 
-<div class="card shadow-sm mb-4">
-    <div class="card-header bg-primary text-white d-flex align-items-center justify-content-between">
-        <div class="d-flex align-items-center">
-            <i class="bi bi-clock-fill me-2"></i>
-            <strong>Captura de Horas Extras</strong>
-        </div>
-        <span class="fw-semibold text-end">
-            <i class="bi bi-calendar-event"></i> Semana: <span id="displayWeekDate">[sin seleccionar]</span>
-        </span>
-    </div>
-    <div class="card-body">
-        <form asp-action="Create" method="post" enctype="multipart/form-data">
-            <div class="mb-3">
-                <label class="form-label fw-semibold"><i class="bi bi-calendar2-week"></i> Fecha de la semana</label>
-                <input type="date" asp-for="WeekDate" class="form-control" required onchange="updateDisplayDate()" id="inputWeekDate" />
-            </div>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
-            <div id="rows-container">
-                <div class="overtime-row border rounded p-3 mb-3 bg-light" data-index="0">
-                    <div class="mb-2">
-                        <label class="form-label fw-semibold">Fila 1: Días trabajados y horas</label>
-                    </div>
-                    <div class="row">
-                        @foreach (var day in new[] { "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo" })
+<div class="container my-4">
+    <div class="row">
+        <div class="col-12 d-flex justify-content-between align-items-center">
+            <h2 class="fw-bold text-primary mb-3"><i class="fa-solid fa-clock"></i> Captura de Horas Extra</h2>
+            <span class="badge bg-info fs-5 shadow-sm">Semana actual: @semanaActual</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 d-flex justify-content-end align-items-center mb-2">
+            <i class="fa fa-user-circle text-primary fs-4 me-2"></i>
+            <span class="fw-semibold text-dark">Usuario: @userName</span>
+        </div>
+    </div>
+
+    @* --- Mostrar mensaje de éxito SOLO después de guardar correctamente --- *@
+    @if (TempData["Mensaje"] != null && ViewData.ModelState.IsValid)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            @TempData["Mensaje"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
+        </div>
+    }
+
+    @* --- Mostrar errores generales (por ejemplo, registros duplicados) --- *@
+    @if (!ViewData.ModelState.IsValid && ViewData.ModelState[""] != null)
+    {
+        foreach (var err in ViewData.ModelState[""].Errors)
+        {
+            <div class="alert alert-danger">@err.ErrorMessage</div>
+        }
+    }
+
+    <form asp-action="Create" method="post" enctype="multipart/form-data" id="formHoras">
+        @Html.AntiForgeryToken()
+        <div id="registros-container">
+            @for (int i = 0; i < Model.Count; i++)
+            {
+                <div class="card registro-entry mb-4 shadow-sm border-0 rounded-4" data-index="@i">
+                    <div class="card-header bg-white d-flex justify-content-between align-items-center border-0">
+                        <span class="fw-semibold text-primary">
+                            @(i == 0 ? "Primer registro" : $"Registro {i + 1}")
+                        </span>
+                        @if (i > 0)
                         {
-                            <div class="col-md-3 mb-2 d-flex align-items-center">
-                                <input type="checkbox" class="form-check-input me-2" name="Rows[0].SelectedDays" value="@day" id="chk_0_@day" />
-                                <label class="form-check-label me-2" for="chk_0_@day">@day</label>
-                                <input type="number" class="form-control form-control-sm" name="Rows[0].Hours[@day]" min="0" max="10" step="0.5" placeholder="Hrs" style="width: 70px;" />
-                            </div>
+                            <button type="button" class="btn btn-link text-danger remove-row" title="Eliminar registro">
+                                <i class="fa fa-trash"></i>
+                            </button>
                         }
                     </div>
-                    <div class="mb-3">
-                        <label class="form-label fw-semibold"><i class="bi bi-journal-text"></i> Descripción de actividades</label>
-                        <textarea class="form-control" rows="2" name="Rows[0].Description" required></textarea>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label fw-semibold"><i class="bi bi-paperclip"></i> Evidencia (PDF o JPG)</label>
-                        <input type="file" class="form-control" name="Rows[0].FileUpload" accept=".pdf,.jpg,.jpeg" required />
+                    <div class="card-body pt-3">
+                        @if (i == 0)
+                        {
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label class="form-label fw-semibold">
+                                        <i class="fa fa-calendar-week text-primary me-1"></i>Semana a reportar
+                                    </label>
+                                    <input type="date" class="form-control week-date-picker rounded-3"
+                                           id="fechaSemana_@i" name="[@i].FechaSemana" required
+                                           value="@(Model[i].FechaSemana.HasValue ? Model[i].FechaSemana.Value.ToString("yyyy-MM-dd") : "")" />
+                                    @Html.ValidationMessage($"[{i}].FechaSemana", null, new { @class = "text-danger small" })
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label fw-semibold">
+                                        <i class="fa fa-user-clock text-primary me-1"></i>Turno
+                                    </label>
+                                    <select class="form-select rounded-3" required name="[@i].Turno">
+                                        <option value="">Selecciona turno</option>
+                                        <option value="Matutino" @(Model[i].Turno == "Matutino" ? "selected" : "")>Matutino</option>
+                                        <option value="Vespertino" @(Model[i].Turno == "Vespertino" ? "selected" : "")>Vespertino</option>
+                                        <option value="Nocturno" @(Model[i].Turno == "Nocturno" ? "selected" : "")>Nocturno</option>
+                                    </select>
+                                    @Html.ValidationMessage($"[{i}].Turno", null, new { @class = "text-danger small" })
+                                </div>
+                            </div>
+                        }
+                        <div class="dias-office365 mb-3">
+                            <div class="fw-semibold text-secondary mb-2">Días y horas (máx. 2 consecutivos):</div>
+                            <div class="table-responsive">
+                                <table class="table table-borderless mb-0 align-middle" style="min-width:560px">
+                                    <thead>
+                                        <tr>
+                                            @for (int d = 1; d <= 7; d++)
+                                            {
+                                                <th class="text-center p-0 fw-normal text-secondary small">@nombresDias[d % 7]</th>
+                                            }
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            @for (int d = 1; d <= 7; d++)
+                                            {
+                                                // Bloquea los días que ya están seleccionados en otros registros
+                                                bool isDiaUsado = false;
+                                                for (int prev = 0; prev < Model.Count; prev++)
+                                                {
+                                                    if (prev != i && Model[prev].DiasSeleccionados.Contains(d % 7))
+                                                    {
+                                                        isDiaUsado = true;
+                                                        break;
+                                                    }
+                                                }
+                                                <td class="text-center p-1">
+                                                    <input class="form-check-input dias-check"
+                                                           type="checkbox"
+                                                           name="[@i].DiasSeleccionados"
+                                                           id="dias_@i@d"
+                                                           value="@(d % 7)"
+                                                           @(Model[i].DiasSeleccionados.Contains(d % 7) ? "checked" : "")
+                                                           @(isDiaUsado ? "disabled" : "") />
+                                                </td>
+                                            }
+                                        </tr>
+                                        <tr>
+                                            @for (int d = 1; d <= 7; d++)
+                                            {
+                                                <td class="text-center p-1">
+                                                    <input type="number"
+                                                           step="0.5"
+                                                           min="0.5"
+                                                           max="10"
+                                                           name="[@i].HorasPorDia"
+                                                           id="horas_@i@d"
+                                                           class="form-control form-control-sm mx-auto"
+                                                           style="width:60px;"
+                                                           placeholder="hrs"
+                                                           @(Model[i].DiasSeleccionados.Contains(d % 7) ? "" : "disabled")
+                                                           value="@(Model[i].HorasPorDia.Count > d - 1 ? Model[i].HorasPorDia[d - 1].ToString() : "")" />
+                                                </td>
+                                            }
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <span class="text-danger small dias-msg d-none"></span>
+                            @Html.ValidationMessage($"[{i}].DiasSeleccionados", null, new { @class = "text-danger small" })
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Detalle de actividades</label>
+                            <textarea class="form-control rounded-3" rows="2" maxlength="400" required name="[@i].DetalleActividades">@Model[i].DetalleActividades</textarea>
+                            @Html.ValidationMessage($"[{i}].DetalleActividades", null, new { @class = "text-danger small" })
+                        </div>
+                        <div>
+                            <label class="form-label fw-semibold">Adjuntar PDF/JPG (máx 4MB)</label>
+                            <input class="form-control rounded-3" type="file" accept=".pdf,.jpg,.jpeg" required name="[@i].ArchivoAdjunto" />
+                            @Html.ValidationMessage($"[{i}].ArchivoAdjunto", null, new { @class = "text-danger small" })
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="mb-3 text-end">
-                <button type="button" class="btn btn-outline-primary btn-sm" onclick="addRow()">
-                    <i class="bi bi-plus-circle"></i> Agregar fila (máximo 7)
-                </button>
-            </div>
-
-            <div class="d-flex justify-content-between">
-                <button type="submit" class="btn btn-primary">
-                    <i class="bi bi-save-fill"></i> Guardar
-                </button>
-                <a asp-action="MisRegistros" class="btn btn-outline-secondary">
-                    <i class="bi bi-clock-history"></i> Ver mis registros
-                </a>
-            </div>
-        </form>
-    </div>
+            }
+        </div>
+        <div class="d-flex justify-content-end mb-4">
+            <button type="button" class="btn btn-outline-primary rounded-pill px-4 py-2 shadow-sm" id="agregarFila"
+                    @(Model.Count >= 7 ? "disabled" : "")>
+                <i class="fa fa-plus me-1"></i> Agregar registro
+            </button>
+        </div>
+        <div class="d-flex justify-content-end mt-3">
+            <button type="submit" class="btn btn-primary rounded-pill px-4 shadow-sm">
+                <i class="fa fa-save"></i> Guardar
+            </button>
+        </div>
+    </form>
 </div>
 
-@section Scripts {
-    <script>
-        function updateDisplayDate() {
-            const dateInput = document.getElementById("inputWeekDate");
-            const display = document.getElementById("displayWeekDate");
-            if (dateInput && dateInput.value) {
-                const date = new Date(dateInput.value);
-                const options = { year: 'numeric', month: 'long', day: 'numeric' };
-                display.innerText = date.toLocaleDateString('es-MX', options);
-            } else {
-                display.innerText = "[sin seleccionar]";
-            }
-        }
-        updateDisplayDate();
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>
+    function getNextIndex() {
+        return $(".registro-entry").length;
+    }
 
-        let rowIndex = 1;
-        function addRow() {
-            if (rowIndex >= 7) return alert("Solo puedes agregar hasta 7 filas.");
+    $("#agregarFila").click(function () {
+        let total = $(".registro-entry").length;
+        if (total >= 7) return;
+        let i = getNextIndex();
+        let nombresDias = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sabado"];
 
-            const container = document.getElementById("rows-container");
-            const original = document.querySelector(".overtime-row");
-            const clone = original.cloneNode(true);
-            clone.dataset.index = rowIndex;
-
-            // Actualizar los nombres e IDs de los inputs/clases
-            clone.querySelectorAll("input, textarea, label").forEach(el => {
-                if (el.name) el.name = el.name.replace(/Rows\[\d+\]/, `Rows[${rowIndex}]`);
-                if (el.id) el.id = el.id.replace(/_\d+_/, `_${rowIndex}_`);
-                if (el.htmlFor) el.htmlFor = el.htmlFor.replace(/_\d+_/, `_${rowIndex}_`);
-                if (el.tagName === "LABEL" && el.classList.contains("form-check-label")) el.textContent = el.textContent.trim();
-                if (el.tagName === "TEXTAREA") el.value = "";
-                if (el.type === "file") el.value = "";
-                if (el.type === "checkbox" || el.type === "number") el.checked = false; el.value = "";
+        // --- Identificar días ya usados en otros registros ---
+        let diasSeleccionados = [];
+        $(".registro-entry").each(function () {
+            $(this).find(".dias-check:checked").each(function () {
+                diasSeleccionados.push(parseInt($(this).val()));
             });
+        });
 
-            clone.querySelector("label.form-label").textContent = `Fila ${rowIndex + 1}: Días trabajados y horas`;
-
-            container.appendChild(clone);
-            rowIndex++;
+        let fila = `<div class="card registro-entry mb-4 shadow-sm border-0 rounded-4" data-index="${i}">
+            <div class="card-header bg-white d-flex justify-content-between align-items-center border-0">
+                <span class="fw-semibold text-primary">Registro ${i + 1}</span>
+                <button type="button" class="btn btn-link text-danger remove-row" title="Eliminar registro">
+                    <i class="fa fa-trash"></i>
+                </button>
+            </div>
+            <div class="card-body pt-3">
+                <div class="dias-office365 mb-3">
+                    <div class="fw-semibold text-secondary mb-2">Días y horas (máx. 2 consecutivos):</div>
+                    <div class="table-responsive">
+                        <table class="table table-borderless mb-0 align-middle" style="min-width:560px">
+                            <thead><tr>`;
+        for (let d = 1; d <= 7; d++) fila += `<th class="text-center p-0 fw-normal text-secondary small">${nombresDias[d % 7]}</th>`;
+        fila += `</tr></thead><tbody><tr>`;
+        for (let d = 1; d <= 7; d++) {
+            let disabled = diasSeleccionados.includes(d % 7) ? "disabled" : "";
+            fila += `<td class="text-center p-1"><input class="form-check-input dias-check" type="checkbox" name="[${i}].DiasSeleccionados" id="dias_${i}${d}" value="${d % 7}" ${disabled} /></td>`;
         }
-    </script>
-}
+        fila += `</tr><tr>`;
+        for (let d = 1; d <= 7; d++)
+            fila += `<td class="text-center p-1"><input type="number" step="0.5" min="0.5" max="10" name="[${i}].HorasPorDia" id="horas_${i}${d}" class="form-control form-control-sm mx-auto" style="width:60px;" placeholder="hrs" disabled /></td>`;
+        fila += `</tr></tbody></table></div><span class="text-danger small dias-msg d-none"></span></div>
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">Detalle de actividades</label>
+                    <textarea class="form-control rounded-3" rows="2" maxlength="400" required name="[${i}].DetalleActividades"></textarea>
+                </div>
+                <div>
+                    <label class="form-label fw-semibold">Adjuntar PDF/JPG (máx 4MB)</label>
+                    <input class="form-control rounded-3" type="file" accept=".pdf,.jpg,.jpeg" required name="[${i}].ArchivoAdjunto" />
+                </div>
+            </div>
+        </div>`;
+        $("#registros-container").append(fila);
+        if ($(".registro-entry").length >= 7) $("#agregarFila").prop("disabled", true);
+    });
+
+    $(document).on("click", ".remove-row", function () {
+        $(this).closest(".registro-entry").remove();
+        $("#agregarFila").prop("disabled", false);
+    });
+
+    $(document).on('change', '.dias-check', function () {
+        var parent = $(this).closest('.registro-entry');
+        var checkboxes = parent.find('.dias-check');
+        var checked = [];
+        checkboxes.each(function (i, el) { if ($(el).is(':checked')) checked.push(i + 1); });
+        var msg = parent.find('.dias-msg');
+        msg.addClass('d-none').text('');
+        if (checked.length > 2) {
+            $(this).prop('checked', false);
+            msg.removeClass('d-none').text('Solo puedes elegir hasta 2 días por registro.');
+            return;
+        }
+        if (checked.length == 2 && Math.abs(checked[0] - checked[1]) != 1) {
+            $(this).prop('checked', false);
+            msg.removeClass('d-none').text('Solo puedes seleccionar días consecutivos.');
+            return;
+        }
+        var id = $(this).attr('id').replace('dias', 'horas');
+        if ($(this).is(':checked')) {
+            $('#' + id).prop('disabled', false).focus();
+        } else {
+            $('#' + id).prop('disabled', true).val('');
+        }
+    });
+</script>
+

@@ -1,29 +1,51 @@
-
 using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
 
 namespace HorasExtrasAppClean.Models
-{
+{[Table("OvertimeRecord")]
     public class OvertimeRecord
     {
         public int Id { get; set; }
 
         [Required]
-        public string UserId { get; set; } = string.Empty;
+        public string Estatus { get; set; } = "Guardado";
+
+        [Required]
+        public bool Enviado { get; set; } = false;
+
+        [Required]
+        public bool Rechazado { get; set; } = false;
+
+        [Required]
+        public string UserId { get; set; } = "";
+
+        [Required]
+        public string NombreEmpleado { get; set; } = "";
+
+        [Required]
+        public int WeekNumber { get; set; }
+
+        [Required]
+        public string Turno { get; set; } = "";
 
         [Required]
         public DateTime WeekDate { get; set; }
 
         [Required]
-        public string Days { get; set; } = string.Empty; // Ej. "1,2"
+        public string DiasSeleccionadosJson { get; set; } = "[]";
 
         [Required]
-        public string Description { get; set; } = string.Empty;
+        public string HorasPorDiaJson { get; set; } = "[]";
+
+        public string? DetalleActividades { get; set; }
 
         public string? FilePath { get; set; }
 
-        public string? HoursPerDayJson { get; set; } // Ej. {"0":2,"1":3.5}
+        public DateTime CreatedAt { get; set; } = DateTime.Now;
 
-        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+        // NUEVO: Propiedad para el motivo del rechazo
+        public string? RazonRechazo { get; set; }
     }
 }

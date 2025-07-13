@@ -1,0 +1,149 @@
+﻿body {
+    background: #f3f6fb;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 960px;
+    margin: 20px auto;
+    padding: 0 15px;
+}
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.card-summary {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+    padding: 20px;
+    flex: 1 1 30%;
+    min-width: 250px;
+    color: #333;
+}
+
+    .card-summary h3 {
+        margin: 0 0 10px;
+        font-weight: 700;
+        font-size: 1.25rem;
+        color: #0078d4; /* color Office365 azul */
+    }
+
+    .card-summary .total-hours {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #005a9e;
+    }
+
+    .card-summary button {
+        margin-top: 15px;
+        padding: 8px 14px;
+        background-color: #0078d4;
+        border: none;
+        border-radius: 4px;
+        color: white;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+    }
+
+        .card-summary button:hover {
+            background-color: #005a9e;
+        }
+
+.registro-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.registro-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.registro-header {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #0078d4;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.registro-body {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+    .registro-body div {
+        font-size: 0.95rem;
+        color: #333;
+    }
+
+.registro-actions {
+    margin-top: auto;
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+button.action-btn {
+    background-color: #0078d4;
+    border: none;
+    border-radius: 4px;
+    padding: 7px 14px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+    button.action-btn:hover {
+        background-color: #005a9e;
+    }
+
+.status-label {
+    font-weight: 600;
+    padding: 5px 10px;
+    border-radius: 4px;
+    color: white;
+    font-size: 0.9rem;
+}
+
+.status-pendiente {
+    background-color: #ffb900;
+}
+
+.status-enviado {
+    background-color: #0078d4;
+}
+
+.status-rechazado {
+    background-color: #d13438;
+}
+
+@media (min-width: 768px) {
+    .registro-list {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .registro-card {
+        flex: 1 1 45%;
+    }
+}

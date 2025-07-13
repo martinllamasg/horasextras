@@ -1,0 +1,92 @@
+﻿@model HorasExtrasAppClean.Models.OvertimeEntryModel
+@{
+    var index = ViewBag.Index ?? 0;
+    var nombresDias = new[] { "Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sabado" };
+}
+
+<div class="dias-office365 mb-3">
+    <div class="fw-semibold text-secondary mb-2">Días y horas (máx. 2 consecutivos):</div>
+    <div class="table-responsive">
+        <table class="table table-borderless mb-0 align-middle" style="min-width:560px">
+            <thead>
+                <tr>
+                    @for (int d = 1; d <= 7; d++)
+                    {
+                        <th class="text-center p-0 fw-normal text-secondary small">@nombresDias[d % 7]</th>
+                    }
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    @for (int d = 1; d <= 7; d++)
+                    {
+                        <td class="text-center p-1">
+                            <input class="form-check-input dias-check"
+                                   type="checkbox"
+                                   name="[@index].DiasSeleccionados"
+                                   id="dias_@index@d"
+                                   value="@(d % 7)"
+                                   @(Model.DiasSeleccionados.Contains(d % 7) ? "checked" : "") />
+                        </td>
+                    }
+                </tr>
+                <tr>
+                    @for (int d = 1; d <= 7; d++)
+                    {
+                        <td class="text-center p-1">
+                            <input type="number"
+                                   step="0.5"
+                                   min="0.5"
+                                   max="10"
+                                   name="[@index].HorasPorDia"
+                                   id="horas_@index@d"
+                                   class="form-control form-control-sm mx-auto"
+                                   style="width:60px;"
+                                   placeholder="hrs"
+                                   @(Model.DiasSeleccionados.Contains(d % 7) ? "" : "disabled")
+                                   value="@(Model.HorasPorDia.Count > d - 1 ? Model.HorasPorDia[d - 1].ToString() : "")" />
+                        </td>
+                    }
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <span class="text-danger small dias-msg d-none"></span>
+</div>
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).on('change', '.dias-check', function () {
+            var parent = $(this).closest('.registro-entry');
+            var checkboxes = parent.find('.dias-check');
+            var checked = [];
+            checkboxes.each(function(i, el) {
+                if ($(el).is(':checked')) checked.push(i+1);
+            });
+            var msg = parent.find('.dias-msg');
+            msg.addClass('d-none').text('');
+
+            if (checked.length > 2) {
+                $(this).prop('checked', false);
+                msg.removeClass('d-none').text('Solo puedes elegir hasta 2 días por registro.');
+                return;
+            }
+            // Si hay 2 seleccionados, deben ser consecutivos
+            if (checked.length == 2 && Math.abs(checked[0] - checked[1]) != 1) {
+                $(this).prop('checked', false);
+                msg.removeClass('d-none').text('Solo puedes seleccionar días consecutivos.');
+                return;
+            }
+            // Habilita/deshabilita input horas
+            var id = $(this).attr('id').replace('dias', 'horas');
+            if ($(this).is(':checked')) {
+                $('#' + id).prop('disabled', false).focus();
+            } else {
+                $('#' + id).prop('disabled', true).val('');
+            }
+        });
+    </script>
+}
+
+

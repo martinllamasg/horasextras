@@ -1,0 +1,121 @@
+.cards-container {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+.card-summary {
+    flex: 1 1 150px;
+    padding: 1rem;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-align: center;
+    box-shadow: 0 2px 6px rgb(0 0 0 / 0.15);
+}
+.card-summary:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 6px 15px rgb(0 0 0 / 0.25);
+}
+.card-guardado { background-color: #0078d4; } /* azul */
+.card-enviado { background-color: #107c10; } /* verde */
+.card-rechazado { background-color: #a4262c; } /* rojo */
+
+.card-summary .week-label {
+    font-weight: 600;
+    font-size: 1.2rem;
+    opacity: 0.85;
+    margin-bottom: 0.4rem;
+}
+.card-summary .week-number {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+.card-summary .hours-total {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.btn-ver-razon {
+    background: #f3f2f1;
+    color: #a4262c;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 8px;
+    border: none;
+    transition: background-color 0.2s ease;
+}
+.btn-ver-razon:hover {
+    background-color: #e1dfdd;
+}
+
+.btn-nuevo-registro {
+    flex: 1 1 150px;
+    padding: 1rem;
+    background-color: #323130;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgb(0 0 0 / 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+.btn-nuevo-registro:hover {
+    background-color: #444340;
+    transform: translateY(-6px);
+}
+
+/* Tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+th, td {
+    padding: 0.6rem 0.8rem;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+    vertical-align: middle;
+}
+th {
+    background-color: #f3f2f1;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #323130;
+}
+tbody tr:hover {
+    background-color: #f9f9f9;
+}
+.acciones button, .acciones a {
+    margin-right: 0.4rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .cards-container {
+        flex-direction: column;
+    }
+    .card-summary, .btn-nuevo-registro {
+        width: 100%;
+        min-width: auto;
+        margin-bottom: 1rem;
+    }
+    table {
+        font-size: 0.9rem;
+    }
+    .acciones button, .acciones a {
+        margin-bottom: 0.3rem;
+        width: 100%;
+        display: block;
+    }
+}

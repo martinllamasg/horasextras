@@ -1,0 +1,72 @@
+﻿@model HorasExtrasAppClean.Models.OvertimeEntryModel
+@{
+    var index = ViewBag.Index ?? 0;
+    var nombresDias = new[] { "Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sabado" };
+}
+<div class="card registro-entry mb-4 shadow-sm border-0 rounded-4">
+    <div class="card-header bg-white d-flex justify-content-between align-items-center border-0">
+        <span class="fw-semibold text-primary">Registro adicional @(index + 1)</span>
+        <button type="button" class="btn btn-light text-danger btn-sm remove-row border-0" title="Eliminar registro">
+            <i class="fa fa-trash"></i>
+        </button>
+    </div>
+    <div class="card-body pt-3">
+        <div class="dias-office365 mb-3">
+            <div class="fw-semibold text-secondary mb-2">Días y horas (máx. 2 consecutivos):</div>
+            <div class="table-responsive">
+                <table class="table table-borderless mb-0 align-middle" style="min-width:560px">
+                    <thead>
+                        <tr>
+                            @for (int d = 1; d <= 7; d++)
+                            {
+                                <th class="text-center p-0 fw-normal text-secondary small">@nombresDias[d % 7]</th>
+                            }
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            @for (int d = 1; d <= 7; d++)
+                            {
+                                <td class="text-center p-1">
+                                    <input class="form-check-input dias-check"
+                                           type="checkbox"
+                                           name="[@index].DiasSeleccionados"
+                                           id="dias_@index@d"
+                                           value="@(d % 7)"
+                                           @(Model.DiasSeleccionados.Contains(d % 7) ? "checked" : "") />
+                                </td>
+                            }
+                        </tr>
+                        <tr>
+                            @for (int d = 1; d <= 7; d++)
+                            {
+                                <td class="text-center p-1">
+                                    <input type="number"
+                                           step="0.5"
+                                           min="0.5"
+                                           max="10"
+                                           name="[@index].HorasPorDia"
+                                           id="horas_@index@d"
+                                           class="form-control form-control-sm mx-auto"
+                                           style="width:60px;"
+                                           placeholder="hrs"
+                                           @(Model.DiasSeleccionados.Contains(d % 7) ? "" : "disabled")
+                                           value="@(Model.HorasPorDia.Count > d - 1 ? Model.HorasPorDia[d - 1] : "")" />
+                                </td>
+                            }
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <span class="text-danger small dias-msg d-none"></span>
+        </div>
+        <div class="mb-3">
+            <label class="form-label fw-semibold">Detalle de actividades</label>
+            <textarea class="form-control rounded-3" rows="2" maxlength="400" required name="[@index].DetalleActividades">@Model.DetalleActividades</textarea>
+        </div>
+        <div>
+            <label class="form-label fw-semibold">Adjuntar PDF/JPG (máx 4MB)</label>
+            <input class="form-control rounded-3" type="file" accept=".pdf,.jpg,.jpeg" required name="[@index].ArchivoAdjunto" />
+        </div>
+    </div>
+</div>

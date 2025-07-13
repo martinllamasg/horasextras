@@ -1,0 +1,54 @@
+@using Newtonsoft.Json
+@model IEnumerable<HorasExtrasAppClean.Models.OvertimeRecord>
+@{
+    ViewBag.Title = "Autorizar Horas Extra";
+    var nombresDias = new[] { "Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado" };
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>Empleado</th>
+            <th>Semana</th>
+            <th>Días</th>
+            <th>Horas</th>
+            <th>Turno</th>
+            <th>Detalle</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            var dias = new List<int>();
+            var horas = new List<double>();
+            try { dias = JsonConvert.DeserializeObject<List<int>>(item.DiasSeleccionadosJson) ?? new List<int>(); }
+            catch { if (int.TryParse(item.DiasSeleccionadosJson, out var d)) dias.Add(d); }
+            try { horas = JsonConvert.DeserializeObject<List<double>>(item.HorasPorDiaJson) ?? new List<double>(); }
+            catch { if (double.TryParse(item.HorasPorDiaJson, out var h)) horas.Add(h); }
+
+            <tr>
+                <td>@item.NombreEmpleado</td>
+                <td>@item.WeekNumber</td>
+                <td>
+                    @foreach (var d in dias)
+                    {
+                        @nombresDias[d]
+                        <br />
+                    }
+                </td>
+                <td>
+                    @foreach (var h in horas)
+                    {
+                        @h
+                        <br />
+                    }
+                </td>
+                <td>@item.Turno</td>
+                <td>@item.DetalleActividades</td>
+                <td>
+                    <!-- Aquí van tus botones de aprobar/rechazar -->
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

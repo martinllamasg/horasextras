@@ -1,6 +1,5 @@
-
-using Microsoft.EntityFrameworkCore;
 using HorasExtrasAppClean.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace HorasExtrasAppClean.Data
 {
