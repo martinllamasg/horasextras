@@ -1,32 +1,442 @@
+@using Newtonsoft.Json
+@model IEnumerable<HorasExtrasAppClean.Models.OvertimeRecord>
 
 @{
-    ViewData["Title"] = "Mis Registros";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Mis Registros";
+    var nombresDias = new[] { "Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado" };
+    var registros = Model.OrderBy(r => r.WeekNumber).ToList();
+
+    var grupos = registros
+        .GroupBy(r => r.WeekNumber)
+        .OrderBy(g => g.Key)
+        .ToList();
+
+    Func<IGrouping<int, HorasExtrasAppClean.Models.OvertimeRecord>, double> totalHorasSemana = g =>
+        g.Sum(r =>
+        {
+            try
+            {
+                var horas = System.Text.Json.JsonSerializer.Deserialize<List<double>>(r.HorasPorDiaJson);
+                return horas?.Sum() ?? 0;
+            }
+            catch
+            {
+                return 0;
+            }
+        });
+
+    Func<IGrouping<int, HorasExtrasAppClean.Models.OvertimeRecord>, string> estadoSemana = g =>
+    {
+        if (g.Any(r => r.Rechazado)) return "Rechazado";
+        if (g.Any(r => r.Enviado)) return "Enviado";
+        return "Guardado";
+    };
+
+    var semanasGuardadas = grupos.Where(g => estadoSemana(g) == "Guardado").Take(3).ToList();
+    var semanasEnviadas = grupos.Where(g => estadoSemana(g) == "Enviado").ToList();
+    var semanasRechazadas = grupos.Where(g => estadoSemana(g) == "Rechazado").ToList();
+
+    double totalHorasEnviadas = semanasEnviadas.Sum(g => totalHorasSemana(g));
+    double totalHorasRechazadas = semanasRechazadas.Sum(g => totalHorasSemana(g));
 }
 
-<h2 class="mb-4"><i class="bi bi-clock-history"></i> Mis Registros Recientes</h2>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
-<div class="row">
-    @{
-        var semanas = new[] { "Semana del 01-Jul-2025", "Semana del 24-Jun-2025", "Semana del 17-Jun-2025" };
-        foreach (var semana in semanas)
-        {
-            <div class="col-md-4 mb-4">
-                <div class="card shadow-sm h-100">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title text-primary"><i class="bi bi-calendar-week"></i> @semana</h5>
-                        <p class="card-text">Horas capturadas, evidencia cargada y descripción registrada.</p>
-                        <div class="mt-auto">
-                            <a href="@Url.Action("Resumen", "Overtime")" class="btn btn-outline-primary btn-sm me-2">
-                                <i class="bi bi-search"></i> Ver Detalles
-                            </a>
-                            <a href="@Url.Action("Create", "Overtime")" class="btn btn-outline-secondary btn-sm">
-                                <i class="bi bi-pencil-square"></i> Editar
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<style>
+    :root {
+        --color-guardado: #0d6efd; /* Azul bootstrap */
+        --color-enviado: #ffc107; /* Amarillo bootstrap */
+        --color-rechazado: #dc3545; /* Rojo bootstrap */
+        --color-nuevo: #198754; /* Verde bootstrap */
+        --color-text-light: #fff;
+        --color-text-dark: #212529;
+        --color-bg-light: #f8f9fa;
+    }
+
+    body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        color: var(--color-text-dark);
+        background-color: var(--color-bg-light);
+        padding: 1.5rem 2rem;
+    }
+
+    .cards-container {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 3rem;
+    }
+
+    .card-summary, .btn-nuevo-registro {
+        flex: 1 1 260px;
+        max-width: 260px;
+        min-height: 180px;
+        padding: 2rem 1.8rem;
+        border-radius: 14px;
+        box-shadow: 0 6px 15px rgb(0 0 0 / 0.12);
+        text-align: center;
+        color: var(--color-text-light);
+        font-weight: 700;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 0.5rem;
+        cursor: pointer;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+        user-select: none;
+    }
+
+    .card-summary:hover, .btn-nuevo-registro:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 30px rgb(0 0 0 / 0.18);
+    }
+
+    .card-guardado {
+        background-color: var(--color-guardado);
+    }
+
+    .card-enviado {
+        background-color: var(--color-enviado);
+        color: #212529;
+    }
+
+    .card-rechazado {
+        background-color: var(--color-rechazado);
+    }
+
+    .btn-nuevo-registro {
+        background-color: var(--color-nuevo);
+        color: var(--color-text-light);
+        font-size: 1.2rem;
+        align-items: center;
+        justify-content: center;
+        gap: 0.7rem;
+    }
+
+    .week-label {
+        font-size: 1.3rem;
+        opacity: 0.85;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.6rem;
+        user-select: none;
+    }
+
+    .week-number {
+        font-size: 4.5rem;
+        font-weight: 900;
+        line-height: 1;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        user-select: none;
+    }
+
+    .hours-total {
+        font-size: 1.7rem;
+        font-weight: 700;
+        user-select: none;
+    }
+
+    .status-text {
+        font-weight: 600;
+        font-size: 1.05rem;
+        user-select: none;
+    }
+
+    .btn-ver-razon {
+        background: rgba(255 255 255 / 0.9);
+        color: var(--color-rechazado);
+        font-weight: 700;
+        padding: 8px 14px;
+        border-radius: 10px;
+        cursor: pointer;
+        margin-top: 1.7rem;
+        border: none;
+        font-size: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        box-shadow: 0 6px 15px rgb(0 0 0 / 0.12);
+        user-select: none;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-ver-razon:hover {
+        background-color: #f3c8c8;
+    }
+
+    .group-header {
+        background-color: white;
+        color: var(--color-guardado);
+        font-weight: 700;
+        cursor: pointer;
+        padding: 0.6rem 1rem;
+        border-radius: 10px;
+        margin-top: 0.5rem;
+        box-shadow: 0 3px 8px rgb(0 0 0 / 0.12);
+        user-select: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 1.4rem;
+        transition: background-color 0.25s ease;
+        width: 100%;
+        gap: 0.6rem;
+    }
+
+    .group-header:hover {
+        background-color: #e0e7ff;
+    }
+
+    .group-header .arrow {
+        transition: transform 0.25s ease;
+        font-weight: 900;
+        font-size: 1.8rem;
+        color: var(--color-guardado);
+        user-select: none;
+    }
+
+    .collapsed .arrow {
+        transform: rotate(-90deg);
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 0.2rem auto 1.2rem auto;
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        font-size: 1.2rem;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        color: var(--color-text-dark);
+        user-select: text;
+    }
+
+    th, td {
+        padding: 0.4rem 0.7rem;
+        border-bottom: 1px solid #ddd;
+        text-align: left;
+        vertical-align: middle;
+        font-size: 1.1rem;
+    }
+
+    th {
+        background-color: var(--color-bg-light);
+        font-weight: 700;
+        font-size: 1.2rem;
+        color: var(--color-guardado);
+    }
+
+    /* Column widths */
+    th:nth-child(1), td:nth-child(1) { width: 8%; }
+    th:nth-child(2), td:nth-child(2) { width: 8%; }
+    th:nth-child(3), td:nth-child(3) { width: 7%; }
+    th:nth-child(4), td:nth-child(4) { width: 50%; }
+    th:nth-child(5), td:nth-child(5) { width: 10%; }
+    th:nth-child(6), td:nth-child(6) { width: 17%; }
+
+    tbody tr:hover {
+        background-color: #f7f9fc;
+    }
+
+    .acciones button,
+    .acciones a {
+        margin-right: 0.3rem;
+        font-size: 1.4rem;
+        padding: 0.4rem 0.6rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+    }
+
+    .acciones button:last-child,
+    .acciones a:last-child {
+        margin-right: 0;
+    }
+
+    /* Responsive */
+    @@media (max-width: 768px) {
+        body {
+            padding: 1rem 1rem;
+        }
+
+        .cards-container {
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .card-summary,
+        .btn-nuevo-registro {
+            width: 100%;
+            max-width: 100%;
+            margin-bottom: 1.5rem;
+        }
+
+        .group-header {
+            width: 100%;
+            max-width: 100%;
+            margin-left: 0;
+            margin-right: 0;
+            font-size: 1.1rem;
+        }
+
+        table {
+            width: 100%;
+            font-size: 1rem;
+            display: block;
+            overflow-x: auto;
+        }
+
+        .acciones button,
+        .acciones a {
+            margin-bottom: 0.3rem;
+            width: 100%;
+            display: block;
+            justify-content: center;
         }
     }
+</style>
+
+<div class="cards-container" role="region" aria-label="Resumen de horas extra">
+    @* Horas en proceso *@
+    @if (semanasEnviadas.Any())
+    {
+        <div class="card-summary card-enviado" title="Horas en proceso de autorización" tabindex="0" role="group" aria-label="Horas en proceso de autorización">
+            <div class="week-label"><i class="fa-solid fa-hourglass-half me-2"></i>En proceso</div>
+            <div class="week-number">@totalHorasEnviadas.ToString("F1") hrs</div>
+            <div class="status-text">En proceso de autorizaciones</div>
+        </div>
+    }
+
+    @* Semanas guardadas *@
+    @foreach (var grupo in semanasGuardadas)
+    {
+        var horasTotal = totalHorasSemana(grupo);
+        <div class="card-summary card-guardado" title="Semana @grupo.Key" tabindex="0" role="group" aria-label="Semana @grupo.Key con @horasTotal.ToString("F1") horas">
+            <div class="week-label"><i class="fa-solid fa-clock me-2"></i>Semana</div>
+            <div class="week-number">@grupo.Key</div>
+            <div class="hours-total">@horasTotal.ToString("F1") hrs</div>
+            <form method="post" asp-controller="Overtime" asp-action="EnviarAutorizacion" asp-route-semana="@grupo.Key" style="margin-top:1rem;">
+                <button type="submit" class="btn btn-light btn-sm" title="Enviar a autorización" aria-label="Enviar a autorización la semana @grupo.Key">
+                    <img src="https://img.icons8.com/ios-glyphs/20/000000/filled-sent.png" alt="Enviar icon" />
+                </button>
+            </form>
+        </div>
+    }
+
+    @* Horas rechazadas *@
+    @if (semanasRechazadas.Any())
+    {
+        <div class="card-summary card-rechazado" title="Horas rechazadas" tabindex="0" role="group" aria-label="Horas rechazadas">
+            <div class="week-label"><i class="fa-solid fa-circle-xmark me-2"></i>Rechazadas</div>
+            <div class="week-number">@totalHorasRechazadas.ToString("F1") hrs</div>
+            <button class="btn-ver-razon" onclick="alert('@string.Join(", ", semanasRechazadas.SelectMany(g => g).Where(r => !string.IsNullOrEmpty(r.RazonRechazo)).Select(r => r.RazonRechazo))')" title="Ver razón de rechazo" aria-label="Ver razón de rechazo">
+                <i class="fa-solid fa-info-circle"></i>
+            </button>
+        </div>
+    }
+
+    @* Nuevo registro *@
+    <div class="btn-nuevo-registro" onclick="location.href='@Url.Action("Create","Overtime")'" title="Crear nuevo registro" role="button" tabindex="0" aria-label="Crear nuevo registro">
+        <img src="https://img.icons8.com/ios-filled/28/ffffff/add--v1.png" alt="Nuevo registro icon" />
+        NUEVO REGISTRO
+    </div>
 </div>
+
+@foreach (var grupo in grupos)
+{
+    var horasTotal = totalHorasSemana(grupo);
+    var estado = estadoSemana(grupo);
+    var semanaId = $"semana_{grupo.Key}";
+
+    <div class="group-header collapsed" data-bs-toggle="collapse" href="#@semanaId" role="button" aria-expanded="false" aria-controls="@semanaId" tabindex="0" aria-label="Semana @grupo.Key, total horas @horasTotal.ToString("F1")">
+        <span><i class="fa-solid fa-calendar-week me-2"></i>Semana @grupo.Key</span>
+        <span>
+            Total horas: @horasTotal.ToString("F1") hrs
+            <i class="fa fa-chevron-down arrow"></i>
+        </span>
+    </div>
+
+    <div class="collapse" id="@semanaId">
+        <table class="table table-striped table-hover mt-2" aria-label="Detalle horas semana @grupo.Key">
+            <thead>
+                <tr>
+                    <th>Días <i class="fa fa-calendar-day ms-1"></i></th>
+                    <th>Horas <i class="fa fa-clock ms-1"></i></th>
+                    <th>Turno <i class="fa fa-user-clock ms-1"></i></th>
+                    <th>Detalle <i class="fa fa-list ms-1"></i></th>
+                    <th>Estatus <i class="fa fa-info-circle ms-1"></i></th>
+                    <th>Acciones <i class="fa fa-cogs ms-1"></i></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in grupo)
+                {
+                    var dias = new List<int>();
+                    var horas = new List<double>();
+                    try { dias = JsonConvert.DeserializeObject<List<int>>(item.DiasSeleccionadosJson) ?? new List<int>(); }
+                    catch { }
+                    try { horas = JsonConvert.DeserializeObject<List<double>>(item.HorasPorDiaJson) ?? new List<double>(); }
+                    catch { }
+
+                    <tr>
+                        <td>
+                            @foreach (var d in dias)
+                            {
+                                @nombresDias[d] <br />
+                            }
+                        </td>
+                        <td>
+                            @foreach (var h in horas)
+                            {
+                                @h.ToString("F1") <br />
+                            }
+                        </td>
+                        <td>@item.Turno</td>
+                        <td>@item.DetalleActividades</td>
+                        <td>
+                            @if (item.Rechazado)
+                            {
+                                <span class="text-danger fw-semibold"><i class="fa-solid fa-circle-xmark me-1"></i>Rechazado</span>
+                            }
+                            else if (item.Enviado)
+                            {
+                                <span class="text-primary fw-semibold"><i class="fa-solid fa-hourglass-half me-1"></i>Enviado</span>
+                            }
+                            else
+                            {
+                                <span>@item.Estatus</span>
+                            }
+                        </td>
+                        <td class="acciones">
+                            <a class="btn btn-outline-primary btn-sm" href="@Url.Content(item.FilePath)" target="_blank" title="Ver archivo">
+                                <img src="https://img.icons8.com/ios/20/000000/open-in-browser.png" alt="Ver archivo" />
+                            </a>
+                            @if (!item.Enviado)
+                            {
+                                <a class="btn btn-outline-secondary btn-sm" href="@Url.Action("Edit", "Overtime", new { id = item.Id })" title="Editar registro">
+                                    <img src="https://img.icons8.com/ios-glyphs/20/000000/edit.png" alt="Editar registro" />
+                                </a>
+                                <form method="post" asp-action="Delete" asp-controller="Overtime" asp-route-id="@item.Id" style="display:inline" onsubmit="return confirm('¿Estás seguro de eliminar este registro?');">
+                                    <button type="submit" class="btn btn-outline-danger btn-sm" title="Eliminar registro">
+                                        <img src="https://img.icons8.com/ios-glyphs/20/000000/trash.png" alt="Eliminar registro" />
+                                    </button>
+                                </form>
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
